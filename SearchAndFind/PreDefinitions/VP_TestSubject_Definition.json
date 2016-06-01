@@ -1,0 +1,113 @@
+{
+    "Subject": "TestSubject",
+    "Configuration": {
+        "instanceID": -55054
+    },
+    "Conditions": [
+        {
+            "Identifier": "CA",
+            "Config": {
+                "ConditionID": "default",
+                "useTeleportation": false,
+                "BodyControllerName": "KeyboardCombi",
+                "HeadControllerName": "KeyboardCombi",
+                "TimeToDisplayObjectToRememberInSeconds": 3.0,
+                "TimeToDisplayObjectWhenFoundInSeconds": 2.0,
+                "offsetToTeleportation": 2.0,
+                "categoriesPerMaze": 1,
+                "mazesToUse": 0,
+                "pathsToUsePerMaze": 0,
+                "objectVisitationsInTraining": 1,
+                "objectVisitationsInExperiment": 1,
+                "useExactOnCategoryPerMaze": true,
+                "groupByMazes": true
+            },
+            "Trials": [
+                {
+                    "TrialType": "Training",
+                    "MazeName": "Maze1",
+                    "Path": 0,
+                    "Category": "Category04",
+                    "ObjectName": "2_Hacksaw"
+                },
+                {
+                    "TrialType": "Experiment",
+                    "MazeName": "Maze1",
+                    "Path": 0,
+                    "Category": "Category04",
+                    "ObjectName": "2_Hacksaw"
+                }
+            ]
+        },
+        {
+            "Identifier": "CB",
+            "Config": {
+                "ConditionID": "default",
+                "useTeleportation": false,
+                "BodyControllerName": "KeyboardCombi",
+                "HeadControllerName": "KeyboardCombi",
+                "TimeToDisplayObjectToRememberInSeconds": 3.0,
+                "TimeToDisplayObjectWhenFoundInSeconds": 2.0,
+                "offsetToTeleportation": 2.0,
+                "categoriesPerMaze": 1,
+                "mazesToUse": 0,
+                "pathsToUsePerMaze": 0,
+                "objectVisitationsInTraining": 1,
+                "objectVisitationsInExperiment": 1,
+                "useExactOnCategoryPerMaze": true,
+                "groupByMazes": true
+            },
+            "Trials": [
+                {
+                    "TrialType": "Training",
+                    "MazeName": "Maze1",
+                    "Path": 0,
+                    "Category": "Category04",
+                    "ObjectName": "1_Drill"
+                },
+                {
+                    "TrialType": "Experiment",
+                    "MazeName": "Maze1",
+                    "Path": 0,
+                    "Category": "Category04",
+                    "ObjectName": "1_Drill"
+                }
+            ]
+        },
+        {
+            "Identifier": "CC",
+            "Config": {
+                "ConditionID": "default",
+                "useTeleportation": false,
+                "BodyControllerName": "KeyboardCombi",
+                "HeadControllerName": "KeyboardCombi",
+                "TimeToDisplayObjectToRememberInSeconds": 3.0,
+                "TimeToDisplayObjectWhenFoundInSeconds": 2.0,
+                "offsetToTeleportation": 2.0,
+                "categoriesPerMaze": 1,
+                "mazesToUse": 0,
+                "pathsToUsePerMaze": 0,
+                "objectVisitationsInTraining": 1,
+                "objectVisitationsInExperiment": 1,
+                "useExactOnCategoryPerMaze": true,
+                "groupByMazes": true
+            },
+            "Trials": [
+                {
+                    "TrialType": "Training",
+                    "MazeName": "Maze1",
+                    "Path": 0,
+                    "Category": "Category04",
+                    "ObjectName": "6_Wrench"
+                },
+                {
+                    "TrialType": "Experiment",
+                    "MazeName": "Maze1",
+                    "Path": 0,
+                    "Category": "Category04",
+                    "ObjectName": "6_Wrench"
+                }
+            ]
+        }
+    ]
+}

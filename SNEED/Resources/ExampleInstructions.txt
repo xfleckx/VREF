@@ -1,0 +1,9 @@
+Hello, these are example instructions! To create your experimental instructions used by the HUDInstructions component for your subjects.
+t:10
+
+Every Line which is not empty will be a single instruction. Furthermore, you can use t:<Seconds> to give a timespan for the last instruction.
+t:5
+
+Additionaly, if you want to display an image beside an instruction text, use i:<imageFileName> to reference a image. All common image file formats (jpeg, png) are supportet. It's recommended to use a quadratic image (e.g. 512x512 px).
+t:10
+i:exampleInstructor.jpg

@@ -1,0 +1,267 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ebb44e748395c4fabbbf1bfbf97ccc, type: 3}
+  m_Name: VP_Recreated_InstanceDefinition
+  m_EditorClassIdentifier: 
+  Subject: Recreated
+  BodyController: 
+  HeadController: 
+  Trials:
+  - TrialType: Training
+    MazeName: Maze1
+    Path: 2
+    Category: Category08
+    ObjectName: 5_TrainCart
+  - TrialType: Training
+    MazeName: Maze1
+    Path: 3
+    Category: Category08
+    ObjectName: 3_Horse
+  - TrialType: Training
+    MazeName: Maze1
+    Path: 0
+    Category: Category08
+    ObjectName: 4_Tricycle
+  - TrialType: Training
+    MazeName: Maze1
+    Path: 1
+    Category: Category08
+    ObjectName: 6_Boat
+  - TrialType: Training
+    MazeName: Maze1
+    Path: 4
+    Category: Category08
+    ObjectName: 2_Forklift
+  - TrialType: Experiment
+    MazeName: Maze1
+    Path: 1
+    Category: Category08
+    ObjectName: 6_Boat
+  - TrialType: Experiment
+    MazeName: Maze1
+    Path: 2
+    Category: Category08
+    ObjectName: 5_TrainCart
+  - TrialType: Experiment
+    MazeName: Maze1
+    Path: 4
+    Category: Category08
+    ObjectName: 2_Forklift
+  - TrialType: Experiment
+    MazeName: Maze1
+    Path: 3
+    Category: Category08
+    ObjectName: 3_Horse
+  - TrialType: Experiment
+    MazeName: Maze1
+    Path: 0
+    Category: Category08
+    ObjectName: 4_Tricycle
+  - TrialType: Training
+    MazeName: Maze2
+    Path: 2
+    Category: Category04
+    ObjectName: 2_Hacksaw
+  - TrialType: Training
+    MazeName: Maze2
+    Path: 0
+    Category: Category04
+    ObjectName: 6_Wrench
+  - TrialType: Training
+    MazeName: Maze2
+    Path: 1
+    Category: Category04
+    ObjectName: 3_Shovel
+  - TrialType: Training
+    MazeName: Maze2
+    Path: 4
+    Category: Category04
+    ObjectName: 4_Pickaxe
+  - TrialType: Training
+    MazeName: Maze2
+    Path: 3
+    Category: Category04
+    ObjectName: 1_Drill
+  - TrialType: Experiment
+    MazeName: Maze2
+    Path: 1
+    Category: Category04
+    ObjectName: 3_Shovel
+  - TrialType: Experiment
+    MazeName: Maze2
+    Path: 3
+    Category: Category04
+    ObjectName: 1_Drill
+  - TrialType: Experiment
+    MazeName: Maze2
+    Path: 2
+    Category: Category04
+    ObjectName: 2_Hacksaw
+  - TrialType: Experiment
+    MazeName: Maze2
+    Path: 4
+    Category: Category04
+    ObjectName: 4_Pickaxe
+  - TrialType: Experiment
+    MazeName: Maze2
+    Path: 0
+    Category: Category04
+    ObjectName: 6_Wrench
+  - TrialType: Training
+    MazeName: Maze3
+    Path: 1
+    Category: Category07
+    ObjectName: 3_Jerrycan
+  - TrialType: Training
+    MazeName: Maze3
+    Path: 3
+    Category: Category07
+    ObjectName: 1_CargoFBX
+  - TrialType: Training
+    MazeName: Maze3
+    Path: 4
+    Category: Category07
+    ObjectName: 2_HP_FBX
+  - TrialType: Training
+    MazeName: Maze3
+    Path: 2
+    Category: Category07
+    ObjectName: 2_HP_FBX
+  - TrialType: Training
+    MazeName: Maze3
+    Path: 0
+    Category: Category07
+    ObjectName: 4_ToolCase
+  - TrialType: Experiment
+    MazeName: Maze3
+    Path: 3
+    Category: Category07
+    ObjectName: 1_CargoFBX
+  - TrialType: Experiment
+    MazeName: Maze3
+    Path: 0
+    Category: Category07
+    ObjectName: 4_ToolCase
+  - TrialType: Experiment
+    MazeName: Maze3
+    Path: 2
+    Category: Category07
+    ObjectName: 2_HP_FBX
+  - TrialType: Experiment
+    MazeName: Maze3
+    Path: 1
+    Category: Category07
+    ObjectName: 3_Jerrycan
+  - TrialType: Experiment
+    MazeName: Maze3
+    Path: 4
+    Category: Category07
+    ObjectName: 2_HP_FBX
+  - TrialType: Training
+    MazeName: Maze4
+    Path: 3
+    Category: Category03
+    ObjectName: 2_ScrewDriverM
+  - TrialType: Training
+    MazeName: Maze4
+    Path: 1
+    Category: Category03
+    ObjectName: 4_Tong
+  - TrialType: Training
+    MazeName: Maze4
+    Path: 2
+    Category: Category03
+    ObjectName: 1_Hammer
+  - TrialType: Training
+    MazeName: Maze4
+    Path: 4
+    Category: Category03
+    ObjectName: 5_Wrench
+  - TrialType: Training
+    MazeName: Maze4
+    Path: 0
+    Category: Category03
+    ObjectName: 3_ScrewDriverS
+  - TrialType: Experiment
+    MazeName: Maze4
+    Path: 2
+    Category: Category03
+    ObjectName: 1_Hammer
+  - TrialType: Experiment
+    MazeName: Maze4
+    Path: 3
+    Category: Category03
+    ObjectName: 2_ScrewDriverM
+  - TrialType: Experiment
+    MazeName: Maze4
+    Path: 1
+    Category: Category03
+    ObjectName: 4_Tong
+  - TrialType: Experiment
+    MazeName: Maze4
+    Path: 4
+    Category: Category03
+    ObjectName: 5_Wrench
+  - TrialType: Experiment
+    MazeName: Maze4
+    Path: 0
+    Category: Category03
+    ObjectName: 3_ScrewDriverS
+  - TrialType: Training
+    MazeName: Maze5
+    Path: 1
+    Category: Category06
+    ObjectName: 2_Bucket
+  - TrialType: Training
+    MazeName: Maze5
+    Path: 2
+    Category: Category06
+    ObjectName: 4_TrashCan
+  - TrialType: Training
+    MazeName: Maze5
+    Path: 4
+    Category: Category06
+    ObjectName: 3_CarboardBox
+  - TrialType: Training
+    MazeName: Maze5
+    Path: 3
+    Category: Category06
+    ObjectName: 1_Barrel
+  - TrialType: Training
+    MazeName: Maze5
+    Path: 0
+    Category: Category06
+    ObjectName: 3_CarboardBox
+  - TrialType: Experiment
+    MazeName: Maze5
+    Path: 2
+    Category: Category06
+    ObjectName: 4_TrashCan
+  - TrialType: Experiment
+    MazeName: Maze5
+    Path: 0
+    Category: Category06
+    ObjectName: 3_CarboardBox
+  - TrialType: Experiment
+    MazeName: Maze5
+    Path: 1
+    Category: Category06
+    ObjectName: 2_Bucket
+  - TrialType: Experiment
+    MazeName: Maze5
+    Path: 3
+    Category: Category06
+    ObjectName: 1_Barrel
+  - TrialType: Experiment
+    MazeName: Maze5
+    Path: 4
+    Category: Category06
+    ObjectName: 3_CarboardBox

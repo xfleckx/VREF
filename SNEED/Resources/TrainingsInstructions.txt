@@ -1,0 +1,2 @@
+Hello, these are example instructions! To create your experimental instructions used by the HUDInstructions component for your subjects.
+t:10
