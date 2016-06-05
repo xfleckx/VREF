@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-namespace Assets.BeMoBI.Scripts.HWinterfaces
+namespace Assets.VREF.Interfaces
 {
 	public interface IOculusRiftController
 	{

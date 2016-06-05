@@ -4,8 +4,9 @@ namespace Assets.VREF.Interfaces
 {
 	public interface ISubjectRelativePositionStream
 	{
-		void Initialize();
-		void LateUpdate();
+		Transform Head();
+		Transform Body();
+		void recalibrate();
 	}
 }
 

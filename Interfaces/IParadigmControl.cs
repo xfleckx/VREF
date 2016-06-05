@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Assets.BeMoBI.Scripts.Paradigm;
+using Assets.VREF.Interfaces;
 
-namespace Assets.BeMoBI.Scripts
+namespace Assets.VREF.Interfaces
 {
     public interface IParadigmControl
     {

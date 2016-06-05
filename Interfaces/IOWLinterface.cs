@@ -1,6 +1,6 @@
 using System;
 
-namespace Assets.BeMoBI.Scripts.HWinterfaces
+namespace Assets.VREF.Interfaces
 {
 	public interface IOWLinterface
 	{
