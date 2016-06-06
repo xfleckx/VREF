@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-
 using UnityEngine.VR;
+using Assets.VREF.Interfaces;
 
 namespace Assets.VREF.Controls
 {

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Assets.VREF.Paradigms.SearchAndFind;
 using Assets.VREF.Interfaces;
 using System;
 

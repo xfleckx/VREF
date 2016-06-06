@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+
 namespace Assets.VREF.Interfaces
 {
     public interface IBodyMovementController : IInputController

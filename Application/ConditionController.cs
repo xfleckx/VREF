@@ -7,7 +7,7 @@ using System.Linq;
 using NLog;
 using Assets.VREF.Application;
 using Assets.VREF.Controls;
-using Assets.VREF.interfaces;
+using Assets.VREF.Interfaces;
 using UnityEngine.SceneManagement;
 
 namespace Assets.VREF.Application

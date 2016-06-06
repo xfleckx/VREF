@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Assets.Paradigms.SearchAndFind.ImageEffects;
+using UnityStandardAssets.ImageEffects;
 
 namespace Assets.VREF.Application.FogControl
 {

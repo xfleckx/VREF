@@ -8,8 +8,7 @@ using UnityEngine.Assertions;
 using VRStandardAssets.Utils;
 using Assets.VREF.Application.FogEffects;
 using Assets.VREF.Controls;
-using Assets.VREF.Scripts;
-using Assets.VREF.Interface.SubjectRepresentation;
+using Assets.VREF.Interfaces.SubjectRepresentation;
 
 using NLog;
 
