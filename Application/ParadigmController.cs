@@ -13,10 +13,12 @@ using Debug = UnityEngine.Debug;
 using NLog;
 using Logger = NLog.Logger; // just aliasing
 using Assets.VREF.PhaseSpaceExtensions;
-using Assets.VREF.Interfaces;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
-using Assets.VREF.Application;
+using Assets.VREF.Interfaces;
+using Assets.VREF.Controls;
+using Assets.VREF.Application.HUD;
+using Assets.VREF.Application.FogControl;
 
 namespace Assets.VREF.Application
 {
@@ -68,7 +70,7 @@ namespace Assets.VREF.Application
         public AudioInstructions audioInstructions;
         public IMarkerStream marker;
         public GameObject objectPresenter;
-        public ObjectPool objectPool;
+        //public ObjectPool objectPool;
         public Transform objectPositionAtTrialStart;
         public GameObject HidingSpotPrefab;
         public GameObject entrance;

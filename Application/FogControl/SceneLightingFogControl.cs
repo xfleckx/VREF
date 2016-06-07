@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityStandardAssets.ImageEffects;
 
-namespace Assets.VREF.Application.FogEffects
+namespace Assets.VREF.Application.FogControl
 {
     public class SceneLightingFogControl : BaseFogControl
     {

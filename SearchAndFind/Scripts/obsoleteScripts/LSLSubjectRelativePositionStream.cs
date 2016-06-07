@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Assets.BeMoBI.Scripts.HWinterfaces;
+using Assets.VREF.Interfaces;
 
 public class LSLSubjectRelativePositionStream : MonoBehaviour {
     

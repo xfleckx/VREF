@@ -4,7 +4,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Assets.VREF.Application.FogEffects;
+using Assets.VREF.Application.FogControl;
 
 namespace Assets.VREF.Application
 {
@@ -31,13 +31,14 @@ namespace Assets.VREF.Application
 
         public ConditionConfiguration conditionConfig;
 
-        protected beMobileMaze mazeInstance;
+      //  protected beMobileMaze mazeInstance;
+        protected DummyInstance dummyInstance;
 
-        protected PathInMaze path;
+      //  protected PathInMaze path;
 
-        public HidingSpot hidingSpotInstance;
+        //public HidingSpot hidingSpotInstance;
 
-        public PathController pathController;
+       // public PathController pathController;
         public GameObject objectToRemember;
 
         public int currentPathID = -1;
@@ -58,11 +59,11 @@ namespace Assets.VREF.Application
 
         protected GameObject activeEnvironment;
 
-        protected LinkedListNode<PathElement> currentPathElement;
+        //protected LinkedListNode<PathElement> currentPathElement;
 
-        protected MazeUnit currentUnit;
+       // protected MazeUnit currentUnit;
 
-        protected MazeUnit lastUnit;
+       // protected MazeUnit lastUnit;
 
         protected Internal_Trial_State currentTrialState;
 
@@ -70,7 +71,7 @@ namespace Assets.VREF.Application
 
         protected Stopwatch unitStopWatch;
 
-        protected MazeUnit lastCorrectUnit;
+       // protected MazeUnit lastCorrectUnit;
 
         private bool isReady;
         internal bool acceptsASubmit;
@@ -79,11 +80,11 @@ namespace Assets.VREF.Application
 
         #region Setup methods
 
-        public virtual void Initialize(string mazeName, int pathID, string category, string objectName)
+        public virtual void Initialize(string paradigmName, int pathID, string category, string objectName)
         {
-            UnityEngine.Debug.Log(string.Format("Initialize {0} Trial: {1} {2} {3} {4}", this.GetType().Name, mazeName, pathID, category, objectName));
+            UnityEngine.Debug.Log(string.Format("Initialize {0} Trial: {1} {2} {3} {4}", this.GetType().Name, paradigmName, pathID, category, objectName));
 
-            var expectedWorld = paradigm.VRManager.ChangeWorld(mazeName);
+            var expectedWorld = paradigm.VRManager.ChangeWorld(paradigmName);
 
             if (expectedWorld != null)
             {
@@ -91,7 +92,7 @@ namespace Assets.VREF.Application
             }
             else
             {
-                UnityEngine.Debug.Log(string.Format("Expected VR Environment \"{0}\" not found! Ending Trial!", mazeName));
+                UnityEngine.Debug.Log(string.Format("Expected VR Environment \"{0}\" not found! Ending Trial!", paradigmName));
                 OnFinished(TimeSpan.Zero);
             }
 
@@ -99,13 +100,13 @@ namespace Assets.VREF.Application
 
             unitStopWatch = new Stopwatch();
 
-            mazeInstance = activeEnvironment.GetComponent<beMobileMaze>();
+            dummyInstance = activeEnvironment.GetComponent<DummyInstance>();
 
-            currentMazeName = mazeName;
+            currentParadigmName = paradigmName;
 
-            paradigm.relativePositionStream.currentMaze = mazeInstance;
+            paradigm.relativePositionStream.currentParadigm = dummyInstance;
 
-            mazeInstance.MazeUnitEventOccured += SubjectMovesWithinTheMaze;
+           // mazeInstance.MazeUnitEventOccured += SubjectMovesWithinTheMaze;
 
             paradigm.startingPoint.EnterStartPoint += OnStartPointEntered;
             paradigm.startingPoint.LeaveStartPoint += OnStartPointLeaved;
@@ -116,9 +117,9 @@ namespace Assets.VREF.Application
 
             ActivatePathAndSetHidingSpot(pathID);
 
-            SwitchAllLightPanelsOff(mazeInstance);
+            //SwitchAllLightPanelsOff(mazeInstance);
 
-            GatherObjectFromObjectPool(category, objectName);
+            //GatherObjectFromObjectPool(category, objectName);
 
         }
 
@@ -723,40 +724,6 @@ namespace Assets.VREF.Application
             }
         }
 
-        #region Helper functions
-
-        private Vector3 GetRotationFrom(MazeUnit unit)
-        {
-            var childs = unit.transform.AllChildren();
-            // try LookAt functions
-            foreach (var wall in childs)
-            {
-                if (wall.name.Equals("South") && !wall.activeSelf)
-                {
-                    return Vector3.zero;
-                }
-
-                if (wall.name.Equals("North") && !wall.activeSelf)
-                {
-                    return new Vector3(0, 180, 0);
-                }
-
-                if (wall.name.Equals("West") && !wall.activeSelf)
-                {
-                    return new Vector3(0, 90, 0);
-                }
-
-                if (wall.name.Equals("East") && !wall.activeSelf)
-                {
-                    return new Vector3(0, 270, 0);
-                }
-
-            }
-
-            return Vector3.one;
-        }
-
-        #endregion
     }
 
     public class TrialResult

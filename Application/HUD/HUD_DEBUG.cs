@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Assets.VREF.Application.HUD.HUD_DEBUG
+namespace Assets.VREF.Application.HUD
 {
     public class HUD_DEBUG : MonoBehaviour
     {

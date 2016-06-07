@@ -14,21 +14,20 @@ namespace Assets.VREF.Application
         
         public ParadigmModelFactory()
         {
-            objectPool = UnityEngine.Object.FindObjectOfType<ObjectPool>();
+           // objectPool = UnityEngine.Object.FindObjectOfType<ObjectPool>();
 
             vrManager = UnityEngine.Object.FindObjectOfType<VirtualRealityManager>();
 
-            mazeInstances = vrManager.transform.AllChildren().Where(c => c.GetComponents<beMobileMaze>() != null).Select(c => c.GetComponent<beMobileMaze>()).ToList();
+            dummyInstances = vrManager.transform.AllChildren().Where(c => c.GetComponents<DummyInstance>() != null).Select(c => c.GetComponent<DummyInstance>()).ToList();
         }
 
         public int atLeastAvailblePathsPerMaze = 0;
 
-        public ObjectPool objectPool;
-        public List<beMobileMaze> mazeInstances;
+        public List<DummyInstance> dummyInstances;
         private VirtualRealityManager vrManager; 
         
         // use stack for asserting that every category will be used once
-        private Stack<Category> availableCategories;
+       // private Stack<Category> availableCategories;
         
         public ParadigmModel Generate(string subjectID, List<ConditionConfiguration> availableConfigurations)
         {
@@ -62,7 +61,7 @@ namespace Assets.VREF.Application
                         var newTrainingsTrialDefinition = new TrialDefinition()
                         {
                             TrialType = typeof(Training).Name,
-                            Category = trialDefinition.Category,
+                           // Category = trialDefinition.Category,
                             MazeName = trialDefinition.MazeName,
                             Path = trialDefinition.Path,
                             ObjectName = trialDefinition.ObjectName
@@ -76,7 +75,7 @@ namespace Assets.VREF.Application
                         var newExperimentTrialDefinition = new TrialDefinition()
                         {
                             TrialType = typeof(Experiment).Name,
-                            Category = trialDefinition.Category,
+                          //  Category = trialDefinition.Category,
                             MazeName = trialDefinition.MazeName,
                             Path = trialDefinition.Path,
                             ObjectName = trialDefinition.ObjectName
@@ -115,11 +114,11 @@ namespace Assets.VREF.Application
 
             availableCategories = new Stack<Category>(shuffledCategories);
 
-            var selectedMazes = mazeInstances.Where(m => conditionConfig.ExpectedMazes.Exists(v => v.Name.Equals(m.name)));
+            var selectedMazes = dummyInstances.Where(m => conditionConfig.ExpectedMazes.Exists(v => v.Name.Equals(m.name)));
 
             var shuffledMazes = selectedMazes.Shuffle().ToList();
 
-            var mazeCategoryMap = new Dictionary<beMobileMaze, Category>();
+            var mazeCategoryMap = new Dictionary<DummyInstance, Category>();
 
             foreach (var maze in shuffledMazes)
             {
@@ -172,7 +171,7 @@ namespace Assets.VREF.Application
             }
         }
 
-        private IEnumerable<TrialConfig> MapPathsToObjects(beMobileMaze maze, Category category, ConditionConfiguration config)
+        private IEnumerable<TrialConfig> MapPathsToObjects(DummyInstance maze, Category category, ConditionConfiguration config)
         {
             var expectedMaze = config.ExpectedMazes.Single(m => m.Name.Equals(maze.name));
 
@@ -203,7 +202,7 @@ namespace Assets.VREF.Application
             return resultConfigs;
         }
 
-        private void ChooseCategoryFor(beMobileMaze m, Dictionary<beMobileMaze, Category> mazeCategoryMap)
+        private void ChooseCategoryFor(DummyInstance m, Dictionary<DummyInstance, Category> mazeCategoryMap)
         {
             if (!mazeCategoryMap.ContainsKey(m))
             {
@@ -219,12 +218,11 @@ namespace Assets.VREF.Application
     /// A temporary configuration of values describing the configuration of a trial
     /// this is used during the generation process
     /// </summary>
-    [DebuggerDisplay("{MazeName} {Path} {Category} {ObjectName}")]
+    [DebuggerDisplay("{MazeName} {Path} {ObjectName}")]
     public struct TrialConfig : ICloneable
     {
         public string MazeName;
         public int Path;
-        public string Category;
         public string ObjectName;
 
         public object Clone()
@@ -233,7 +231,6 @@ namespace Assets.VREF.Application
             {
                 MazeName = this.MazeName,
                 Path = this.Path,
-                Category = this.Category,
                 ObjectName = this.ObjectName
             };
         }

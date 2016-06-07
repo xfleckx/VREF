@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityStandardAssets.ImageEffects;
 
-namespace Assets.Application.FogEffects
+namespace Assets.VREF.Application.FogControl
 {
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]

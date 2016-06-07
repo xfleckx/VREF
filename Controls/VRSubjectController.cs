@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.VR;
 using UnityEngine.Assertions;
 using VRStandardAssets.Utils;
-using Assets.VREF.Application.FogEffects;
+using Assets.VREF.Application.FogControl;
 using Assets.VREF.Controls;
 using Assets.VREF.Interfaces.SubjectRepresentation;
 

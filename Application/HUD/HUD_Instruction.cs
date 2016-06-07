@@ -6,8 +6,9 @@ using System.IO;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Assets.VREF.Utils.Singleton;
 
-namespace Assets.VREF.Appliaction.HUD.HUD_Instruction
+namespace Assets.VREF.Application.HUD
 {
     public class HUD_Instruction : Singleton<HUD_Instruction> {
 
