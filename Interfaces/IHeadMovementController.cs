@@ -10,4 +10,9 @@ namespace Assets.VREF.Interfaces
     {
         Transform Head { get; set; }
     }
+
+    public interface IInputCanCalibrate
+    {
+        void Calibrate();
+    }
 }

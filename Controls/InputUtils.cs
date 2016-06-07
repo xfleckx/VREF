@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Assets.VREF.Interface;
+using Assets.VREF.Interfaces;
 
 namespace Assets.VREF.Controls
 {

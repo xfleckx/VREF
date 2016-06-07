@@ -13,6 +13,20 @@ namespace Assets.VREF.Interfaces
         {
             get; set;
         }
-        
+    }    
+
+  /*  public interface IInputController
+    {
+        string Identifier { get; }
+
+        void Enable();
+
+        void Disable();
     }
+
+    public interface IInputCanCalibrate
+    {
+        void Calibrate();
+    }
+    */    
 }
