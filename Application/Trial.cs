@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Assets.VREF.Application.FogControl;
+using Assets.VREF.Controls; 
 
 namespace Assets.VREF.Application
 {

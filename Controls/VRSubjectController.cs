@@ -6,8 +6,11 @@ using UnityEngine;
 using UnityEngine.VR;
 using UnityEngine.Assertions;
 using VRStandardAssets.Utils;
+using Assets.VREF.Application; //SubjectDescription
 using Assets.VREF.Application.FogControl;
+using Assets.VREF.Application.HUD;
 using Assets.VREF.Controls;
+using Assets.VREF.Interfaces;
 using Assets.VREF.Interfaces.SubjectRepresentation;
 
 using NLog;
