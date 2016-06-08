@@ -17,7 +17,7 @@ namespace Assets.VREF.Application
         {
            // objectPool = UnityEngine.Object.FindObjectOfType<ObjectPool>();
 
-            vrManager = UnityEngine.Object.FindObjectOfType<VirtualRealityManager>();
+            vrManager = UnityEngine.Object.FindObjectOfType<IVirtualRealityManager>();
 
             dummyInstances = vrManager.transform.AllChildren().Where(c => c.GetComponents<DummyInstance>() != null).Select(c => c.GetComponent<DummyInstance>()).ToList();
         }
