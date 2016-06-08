@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Assets.VREF.Application;
+using Assets.VREF.Interfaces;
 
 namespace Assets.VREF.Application
 {
@@ -24,7 +25,7 @@ namespace Assets.VREF.Application
         public int atLeastAvailblePathsPerMaze = 0;
 
         public List<DummyInstance> dummyInstances;
-        private VirtualRealityManager vrManager; 
+        private IVirtualRealityManager vrManager; 
         
         // use stack for asserting that every category will be used once
        // private Stack<Category> availableCategories;

@@ -63,18 +63,17 @@ namespace Assets.VREF.Application
         public ParadigmModel InstanceDefinition;
         
         public ActionWaypoint TrialEndPoint;
-        public VirtualRealityManager VRManager;
+        public IVirtualRealityManager VRManager;
         public StartPoint startingPoint;
         public HUD_Instruction hud;
         public HUD_DEBUG debug_hud;
         public AudioInstructions audioInstructions;
         public IMarkerStream marker;
         public GameObject objectPresenter;
-        //public ObjectPool objectPool;
         public Transform objectPositionAtTrialStart;
         public GameObject HidingSpotPrefab;
         public GameObject entrance;
-        public FullScreenFade fading;
+      //  public FullScreenFade fading;
         public Teleporting teleporter;
         public VRSubjectController subject;
         public BaseFogControl fogControl;
@@ -379,6 +378,7 @@ namespace Assets.VREF.Application
             appLog.Info("Paradigma run finished");
         }
 
+/***
         public void OnRotationEvent(RotationEventArgs args)
         {
             if (args.state == RotationEventArgs.State.Begin)
@@ -388,7 +388,7 @@ namespace Assets.VREF.Application
             if (args.state == RotationEventArgs.State.End)
                 marker.Write("End Rotation", LSLTimeSync.Instance.UpdateTimeStamp);
         }
-
+***/
         #region Public interface for controlling the paradigm remotely
         
         public void StartExperimentFromBeginning()

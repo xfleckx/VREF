@@ -32,39 +32,6 @@ namespace Assets.VREF.Application
             return string.Format(BeginTrial, trialTypeName, mazeName, pathId, objectName, categoryName);
         }
 
-
-        public static string FormatMazeUnitEvent(MazeUnit unit, MazeUnitEventType type)
-        {  
-            if(type == MazeUnitEventType.Entering) { 
-                return string.Format(Enter, unit.GridID.AsIntVector());
-            }
-            else
-            {
-                return string.Format(Exit, unit.GridID.AsIntVector());
-            }
-        }
-
-
-        public static string FormatCorrectTurn(PathElement lastPathElement, PathElement currentPathElement)
-        {
-            var lastGridId = lastPathElement.Unit.GridID.AsIntVector();
-
-            var currentGridId = currentPathElement.Unit.GridID.AsIntVector();
-
-            return string.Format(Turn, lastGridId, currentGridId, lastPathElement.Type, lastPathElement.Turn);
-        }
-
-        public static string FormatIncorrectTurn(MazeUnit wrongUnitEntered, PathElement lastPathElement, PathElement expectedUnit)
-        {
-            var wrongGridId = wrongUnitEntered.GridID.AsIntVector();
-
-            var lastGridId = lastPathElement.Unit.GridID.AsIntVector();
-
-            var expectedGridId = expectedUnit.Unit.GridID.AsIntVector();
-
-            return string.Format(WrongTurn, lastGridId, wrongGridId, expectedGridId, lastPathElement.Type, lastPathElement.Turn);
-        }
-
         public static string FormatFoundObject(string currentMazeName, int iD, string objectName, string categoryName)
         {
             return string.Format(ObjectFound, currentMazeName, iD, objectName, categoryName);
