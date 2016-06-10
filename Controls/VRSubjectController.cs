@@ -5,7 +5,6 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.VR;
 using UnityEngine.Assertions;
-using VRStandardAssets.Utils;
 using Assets.VREF.Application; //SubjectDescription
 using Assets.VREF.Application.FogControl;
 using Assets.VREF.Application.HUD;
@@ -25,7 +24,6 @@ namespace Assets.VREF.Controls
         public CharacterController Body;
         public Transform Head;
         public Camera HeadPerspective;
-        public Reticle reticle;
         public HUD_DEBUG debug_hud;
         public HUD_Instruction instruction_hud;
         
@@ -151,16 +149,6 @@ namespace Assets.VREF.Controls
         }
         
         #region Options
-
-        public void ToggleRectile()
-        {
-            if (reticle == null)
-                return;
-
-            var state = reticle.ReticleTransform.gameObject.activeSelf;
-
-            reticle.ReticleTransform.gameObject.SetActive(!state);
-        }
 
         public void ToggleFog()
         {

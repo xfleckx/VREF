@@ -11,8 +11,7 @@ using Debug = UnityEngine.Debug;
 // See also the NLog.config within the asset directory 
 // Pittfall: You need to copy the NLog.config file to the *_DATA directory after the build!
 using NLog;
-using Logger = NLog.Logger; // just aliasing
-using Assets.VREF.PhaseSpaceExtensions;
+using Logger = NLog.Logger; // just aliasing;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using Assets.VREF.Interfaces;
@@ -22,7 +21,7 @@ using Assets.VREF.Application.FogControl;
 
 namespace Assets.VREF.Application
 {
-    public class ParadigmController : MonoBehaviour, IParadigmControl, IProvideRigidBodyFile
+    public class ParadigmController : MonoBehaviour, IParadigmControl
     {
         public const string STD_CONFIG_NAME = "SearchAndFind_Config.json";
 
