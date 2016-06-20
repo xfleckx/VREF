@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine.Assertions;
 using System;
 
-namespace Assets.BeMoBI.Scripts
+namespace Assets.VREF.Scripts
 {
     public static class ConfigUtil
     {

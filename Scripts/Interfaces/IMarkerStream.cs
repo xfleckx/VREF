@@ -18,49 +18,10 @@ namespace Assets.BeMoBI.Scripts.HWinterfaces
 
 	}
 
-	public class MarkerStream : MonoBehaviour, IMarkerStream
-	{
-
-		public void Write(string marker, double customTimeStamp)
-		{
-			Debug.Log (string.Format ("Write Marker:\t{0}\t{1}", customTimeStamp, marker));
-		}
-
-		public void Write(string marker)
-		{
-			Debug.Log (string.Format ("Write Marker:\t{0}\t{1}", timestamp, marker));
-		}
-
-
-		#region Write Marker at the end of a frame
-
-		private string pendingMarker;
-
-		IEnumerator WriteAfterPostPresent()
-		{
-			yield return new WaitForEndOfFrame();
-
-			Write(pendingMarker);
-
-			yield return null;
-		}
-
-		public void WriteAtTheEndOfThisFrame(string marker)
-		{
-			pendingMarker = marker;
-			StartCoroutine(WriteAfterPostPresent());
-		}
-
-		#endregion
-	}
-
-
-
-
 	/// <summary>
 	/// Example implementation of an marker stream
 	/// </summary>
-	public class DebugMarkerStream : IMarkerStream
+	public class DebugMarkerStream : MonoBehaviour, IMarkerStream
 	{
 		private const string streamName = "DebugMarkerStream";
 		private const string logWithTimeStampPattern = "Marker {0} at {1}";
@@ -82,7 +43,29 @@ namespace Assets.BeMoBI.Scripts.HWinterfaces
 		{
 			Debug.Log(string.Format(logWithTimeStampPattern, name, Time.realtimeSinceStartup));
 		}
-	}
+
+        #region Write Marker at the end of a frame
+
+        private string pendingMarker;
+
+        IEnumerator WriteAfterPostPresent()
+        {
+            yield return new WaitForEndOfFrame();
+
+            Write(pendingMarker);
+
+            yield return null;
+        }
+
+        public void WriteAtTheEndOfThisFrame(string marker)
+        {
+            pendingMarker = marker;
+            StartCoroutine(WriteAfterPostPresent());
+        }
+
+
+        #endregion
+    }
 
 }
 

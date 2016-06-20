@@ -3,21 +3,21 @@ using System;
 using System.Collections;
 using UnityEngine.Events;
 using UnityEngine.Assertions;
+using Assets.VREF.Scripts;
 
 namespace Assets.BeMoBI.Scripts
 {
     public class CommandReciever : MonoBehaviour
     {
         public IParadigmControl paradigm;
-        public VRSubjectController subject;
+        //public VRSubjectController subject;
 
         // Use this for initialization
         void Start()
         {
             paradigm = GetComponent<IParadigmControl>();
-            subject = FindObjectOfType<VRSubjectController>();
-
-            Assert.IsNotNull(subject);
+           // subject = FindObjectOfType<ISubject>();
+           // Assert.IsNotNull(subject);
         }
 
         public void RecieveAndApply(string command)
@@ -39,20 +39,24 @@ namespace Assets.BeMoBI.Scripts
 
             if (command.Equals("pause"))
             {
-                paradigm.ConditionController.InjectPauseTrialAfterCurrentTrial();
+                // TODO here write commands -> command pattern
+                // var new ParadigmPauseCommand().Execute();
+                //paradigm.ConditionController.InjectPauseTrialAfterCurrentTrial();
                 return;
             }
 
             if(command.Equals("pause end"))
-            {
-                paradigm.ConditionController.ReturnFromPauseTrial();
+            { 
+                // TODO here write commands -> command pattern
+                // var new ParadigmPauseEndCommand().Execute();
+                // paradigm.ConditionController.ReturnFromPauseTrial();
                 return;
             }
 
             if (command.Equals("recalibrate_SubjectsOrientation"))
             {
-                if (subject != null)
-                    subject.Recalibrate();
+                //if (subject != null)
+                //    subject.Recalibrate();
 
                 return;
             }
