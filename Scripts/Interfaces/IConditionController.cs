@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Assets.VREF.Interfaces
+namespace Assets.VREF.Scripts.Interfaces
 {
     public interface IConditionController<TConditionDefinition>
     {
