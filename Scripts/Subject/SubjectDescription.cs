@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.VREF.Scripts.Subject
 {
-    [Serializable]
-    public class SubjectDescription
+    /// <summary>
+    /// Model of the subject.
+    /// In some cases important for VR experiments.
+    /// </summary>
+    public class SubjectDescription : ScriptableObject
     {
         public float HeightFromFeetToEyes = 1.76f;
 
-        public float IPD = 67.8f;
+        public float IPD = 64f;
+
+        public float ShoulderWidth = 1f;
 
         public static SubjectDescription GetDefault()
         {
-            return new SubjectDescription();
+            return CreateInstance<SubjectDescription>();
         }
     }
 }

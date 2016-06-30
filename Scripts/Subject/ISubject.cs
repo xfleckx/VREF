@@ -8,6 +8,6 @@ namespace Assets.VREF.Scripts.Subject
 
         Transform Body { get; }
 
-        void Recalibrate();
+        void ConfigureWith(SubjectDescription description);
     }
 }
