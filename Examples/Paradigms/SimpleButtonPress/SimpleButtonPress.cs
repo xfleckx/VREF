@@ -13,6 +13,8 @@ namespace Assets.VREF.Examples.Paradigms.SimpleButtonPress {
 
         public InstructionHud instructions;
 
+        public bool autoStart = false;
+
         public int trials;
 
         private int currentTrial = 0;
@@ -25,7 +27,8 @@ namespace Assets.VREF.Examples.Paradigms.SimpleButtonPress {
         {
             marker = markerStreamHost.GetComponent<IMarkerStream>();
 
-            StartExperiment();
+            if(autoStart)
+                StartExperiment();
 
             Assert.IsNotNull(marker, "Add a MarkerStream instance! Implement the IMarkerStream interface on some script and reference it here!");
         }

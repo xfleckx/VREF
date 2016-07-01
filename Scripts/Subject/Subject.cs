@@ -36,6 +36,9 @@ namespace Assets.VREF.Scripts.Subject
             character = GetComponent<CharacterController>();
             body = character.transform;
             head = eyes.transform;
+
+            if (description != null)
+                ConfigureWith(description);
         }
 
         public void ConfigureWith(SubjectDescription newDescription)
