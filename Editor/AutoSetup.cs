@@ -106,13 +106,33 @@ namespace Assets.VREF.Editor
 
         private static void ConfigureProjectSettings()
         {
-            Debug.Log("Set api settings to full .net 2.0 compatibility!");
-            PlayerSettings.apiCompatibilityLevel = ApiCompatibilityLevel.NET_2_0;
-            Debug.Log("Force assets text serialization - necessary for version control.");
-            EditorSettings.serializationMode = SerializationMode.ForceText;
-            Debug.Log("Make meta files visible.");
-            EditorSettings.externalVersionControl = "Visible Meta Files";
+            if(PlayerSettings.apiCompatibilityLevel != ApiCompatibilityLevel.NET_2_0) { 
+
+                    Debug.Log("Set api settings to full .net 2.0 compatibility!");
+                    PlayerSettings.apiCompatibilityLevel = ApiCompatibilityLevel.NET_2_0;
+                
+            }
+
+            if(EditorSettings.serializationMode != SerializationMode.ForceText) { 
             
+                if(EditorUtility.DisplayDialog("VREF: Use Text serialization", "If you intend to use git or svn you might like that!", "Ok (recommended)", "No"))
+                {
+                    Debug.Log("Force assets text serialization - necessary for version control.");
+                    EditorSettings.serializationMode = SerializationMode.ForceText;
+                }
+            }
+            
+            if(EditorSettings.externalVersionControl != Expected_External_Source_Control) {
+
+                if (EditorUtility.DisplayDialog("VREF: Use visible meta files", "If you intend to use git or svn you might like that!", "Ok (recommended)", "No - (Warning)"))
+                {
+                    Debug.Log("Make meta files visible.");
+                    EditorSettings.externalVersionControl = Expected_External_Source_Control;
+                }
+            }
+
         }
+
+        const string Expected_External_Source_Control = "Visible Meta Files";
     }
 }
