@@ -3,6 +3,7 @@ using System.Collections;
 using Assets.VREF.Scripts;
 using Assets.VREF.Scripts.Instructions;
 using UnityEngine.Assertions;
+using Assets.VREF.Scripts.Interfaces;
 
 namespace Assets.VREF.Examples.Paradigms.SimpleButtonPress {
 

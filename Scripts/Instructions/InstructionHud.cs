@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 using System;
 using System.Text.RegularExpressions;
+using Assets.VREF.Scripts.Util;
 
 namespace Assets.VREF.Scripts.Instructions
 {

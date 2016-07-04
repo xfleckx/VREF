@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using Assets.VREF.Scripts.Interfaces;
 
 namespace Assets.VREF.Scripts { 
     /// <summary>
