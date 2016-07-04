@@ -3,6 +3,7 @@ using UnityEditor;
 using System.Collections.Generic;
 using Assets.VREF.Editor.Setup;
 using Assets.VREF.Scripts.TestAndDebugging;
+using System;
 
 namespace Assets.VREF.Editor
 {
@@ -15,8 +16,11 @@ namespace Assets.VREF.Editor
         static AutoSetup()
         {
             SetupDedicatedControllsForTheTestSubject();
+
+            ConfigureProjectSettings();
         }
-        
+
+
         public static void SetupDedicatedControllsForTheTestSubject()
         {
             var axisToAdd = new List<InputAxis>();
@@ -100,5 +104,15 @@ namespace Assets.VREF.Editor
             }
         }
 
+        private static void ConfigureProjectSettings()
+        {
+            Debug.Log("Set api settings to full .net 2.0 compatibility!");
+            PlayerSettings.apiCompatibilityLevel = ApiCompatibilityLevel.NET_2_0;
+            Debug.Log("Force assets text serialization - necessary for version control.");
+            EditorSettings.serializationMode = SerializationMode.ForceText;
+            Debug.Log("Make meta files visible.");
+            EditorSettings.externalVersionControl = "Visible Meta Files";
+            
+        }
     }
 }
