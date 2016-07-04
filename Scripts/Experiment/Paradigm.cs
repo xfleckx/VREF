@@ -38,8 +38,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
         #endregion
 
         #region dependencies
-        NLog.Logger appLog = NLog.LogManager.GetLogger("AppLog");
-        
+
         public AppInit appInit;
 
         private IConditionController<TConditionDefinition> conditionController;
@@ -71,7 +70,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
         {
             First_GetTheSubjectName();
 
-            appLog.Info("Initializing Paradigm");
+            Debug.Log("Initializing Paradigm");
 
             Second_LoadOrGenerateAConfig();
 
@@ -99,7 +98,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
 
             //appInit.UpdateLoggingConfiguration();
 
-           //appLog.Info(string.Format("Using Subject Id: {0}", SubjectID));
+           //Debug.Log(Info(string.Format("Using Subject Id: {0}", SubjectID));
         }
 
         private void Second_LoadOrGenerateAConfig()
@@ -108,13 +107,13 @@ namespace Assets.VREF.Scripts.BaseParadigm
 
             if (Config == null)
             {
-                appLog.Trace("Try Loading Config...");
+                Debug.Log("Try Loading Config...");
 
-                appLog.Trace("Custom Config: " + appInit.Options.fileNameOfCustomConfig);
+                Debug.Log("Custom Config: " + appInit.Options.fileNameOfCustomConfig);
 
                 var pathToCustomConfig = Application.dataPath + Path.AltDirectorySeparatorChar + appInit.Options.fileNameOfCustomConfig;
 
-                appLog.Trace("Custom Config Path: " + pathToCustomConfig.Trim());
+                Debug.Log("Custom Config Path: " + pathToCustomConfig.Trim());
 
                 bool customConfigFileExists = File.Exists(pathToCustomConfig);
 
@@ -122,7 +121,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
                 {
                     var configFile = new FileInfo(Application.dataPath + Path.AltDirectorySeparatorChar + appInit.Options.fileNameOfCustomConfig);
 
-                    appLog.Info(string.Format("Load specific config: {0}!", configFile.FullName));
+                    Debug.Log(string.Format("Load specific config: {0}!", configFile.FullName));
 
                     Config = ConfigUtil.LoadConfig<TParadigmConfig>(configFile, true,
                         () => Debug.LogError("Loading config failed, using default config + writing a default config"));
@@ -131,10 +130,10 @@ namespace Assets.VREF.Scripts.BaseParadigm
                 }
                 else if (pathOfDefaultConfig.Exists)
                 {
-                    //appLog.Info(string.Format("Found default config at {0}", pathOfDefaultConfig.Name));
+                    //Debug.Log(Info(string.Format("Found default config at {0}", pathOfDefaultConfig.Name));
 
                     //Config = ConfigUtil.LoadConfig<ParadigmConfiguration>(pathOfDefaultConfig, false, () => {
-                    //    appLog.Error(string.Format("Load default config at {0} failed!", pathOfDefaultConfig.Name));
+                    //    Debug.Log(Error(string.Format("Load default config at {0} failed!", pathOfDefaultConfig.Name));
                     //});
 
                     //PathToLoadedConfig = pathOfDefaultConfig.FullName;
@@ -150,7 +149,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
                     //    customPath = new FileInfo(Application.dataPath + Path.AltDirectorySeparatorChar + appInit.Options.fileNameOfCustomConfig);
                     //}
 
-                    //appLog.Info(string.Format("New Config created will be saved to: {0}! Reason: No config file found!", customPath.FullName));
+                    //Debug.Log(Info(string.Format("New Config created will be saved to: {0}! Reason: No config file found!", customPath.FullName));
 
                     //try
                     //{
@@ -158,7 +157,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
                     //}
                     //catch (Exception e)
                     //{
-                    //    //appLog.Info(string.Format("Config could not be saved to: {0}! Reason: {1}", pathOfDefaultConfig.FullName, e.Message));
+                    //    //Debug.Log(Info(string.Format("Config could not be saved to: {0}! Reason: {1}", pathOfDefaultConfig.FullName, e.Message));
                     //}
 
                    // PathToLoadedConfig = customPath.FullName;
@@ -167,7 +166,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
             }
             else
             {
-                appLog.Warn("A configuration instance already exist before loading one!");
+                Debug.Log("A configuration instance already exist before loading one!");
             }
 
         }
@@ -184,7 +183,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
 
                     UnityEngine.Debug.Log(logMsg);
 
-                    //appLog.Info(logMsg);
+                    //Debug.Log(Info(logMsg);
 
                     //var fileContainingDefinition = new FileInfo(appInit.Options.fileNameOfParadigmDefinition);
 
@@ -210,9 +209,9 @@ namespace Assets.VREF.Scripts.BaseParadigm
                     //{
                     //    Debug.LogException(e, this);
 
-                    //    appLog.Fatal(e, "Incorrect configuration! - Try to configure the paradigm in the editor!");
+                    //    Debug.Log(Fatal(e, "Incorrect configuration! - Try to configure the paradigm in the editor!");
 
-                    //    appLog.Fatal("Not able to create an instance definition based on the given configuration! Check the paradigm using the UnityEditor and rebuild the paradigm or change the expected configuration!");
+                    //    Debug.Log(Fatal("Not able to create an instance definition based on the given configuration! Check the paradigm using the UnityEditor and rebuild the paradigm or change the expected configuration!");
 
                     //    UnityEngine.Application.Quit();
                     //}
@@ -235,7 +234,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
 
             var targetFileName = fileNameWoExt + ".json";
 
-            //appLog.Info(string.Format("Saving new definition at: {0}", targetFileName));
+            //Debug.Log(Info(string.Format("Saving new definition at: {0}", targetFileName));
 
             using (var file = new StreamWriter(targetFileName))
             {
@@ -271,14 +270,14 @@ namespace Assets.VREF.Scripts.BaseParadigm
         {
             //marker.Write("End Experiment");
 
-            //appLog.Info("Paradigma run finished");
+            //Debug.Log(Info("Paradigma run finished");
         }
          
         #region Public interface for controlling the paradigm remotely
 
         public void StartExperimentFromBeginning()
         {
-            appLog.Info(string.Format("Run complete paradigma as defined in {0}!", InstanceDefinition.name));
+            Debug.Log(string.Format("Run complete paradigma as defined in {0}!", InstanceDefinition.name));
 
             //marker.Write("Start Experiment");
 
@@ -289,14 +288,14 @@ namespace Assets.VREF.Scripts.BaseParadigm
 
         public void InitializeCondition(string condition)
         {
-            //appLog.Info(string.Format("Condition {0} requested", condition));
+            //Debug.Log(Info(string.Format("Condition {0} requested", condition));
 
             //try
             //{
             //    if (conditionController.currentCondition != null && conditionController.currentCondition.Identifier.Equals(condition))
             //    {
             //        var msg = string.Format("Requested condition '{0}' already initialized! Just start it.", condition);
-            //       // appLog.Info(msg);
+            //       // Debug.Log(Info(msg);
 
             //        return;
             //    }
@@ -309,11 +308,11 @@ namespace Assets.VREF.Scripts.BaseParadigm
             //}
             //catch (InvalidOperationException ioe)
             //{
-            //    //appLog.Error(string.Format("Initialize condition {0} failed! {1}", condition, ioe.Message));
+            //    //Debug.Log(Error(string.Format("Initialize condition {0} failed! {1}", condition, ioe.Message));
             //}
             //catch (ArgumentException ae)
             //{
-            //    //appLog.Error(ae, "Expected Condition could not be started - maybe not implemented or has a wrong name?!");
+            //    //Debug.Log(Error(ae, "Expected Condition could not be started - maybe not implemented or has a wrong name?!");
             //}
 
         }
@@ -339,14 +338,14 @@ namespace Assets.VREF.Scripts.BaseParadigm
             //if (conditionController.HasConditionPending())
             //    conditionController.StartCurrentConditionWithFirstTrial();
             //else
-            //    appLog.Error("Try starting a condition but none has been configured");
+            //    Debug.Log(Error("Try starting a condition but none has been configured");
         }
 
         public bool AutoStartNextCondition = false;
 
         private void ConditionFinished(string conditionId)
         {
-             appLog.Info(string.Format("Condition {0} has finished!", conditionId));
+             Debug.Log(string.Format("Condition {0} has finished!", conditionId));
 
             if (!conditionController.PendingConditions.Any())
             {
@@ -357,7 +356,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
             // TODO
             //if (Config.waitForCommandOnConditionEnd)
             //{
-            //    appLog.Info(string.Format("Waiting for signal to start next condition...", conditionId));
+            //    Debug.Log(Info(string.Format("Waiting for signal to start next condition...", conditionId));
 
             //    //hud.ShowInstruction("You made it through one part of the experiment!", "Congrats!");
 
@@ -388,7 +387,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
         public void TryToPerformSaveInterruption()
         {
             throw new NotImplementedException("TODO");
-            //appLog.Info("Try performing save interruption of current condition.");
+            //Debug.Log(Info("Try performing save interruption of current condition.");
 
             //if (conditionController.IsConditionRunning)
             //{
@@ -444,7 +443,7 @@ namespace Assets.VREF.Scripts.BaseParadigm
 
         //        if (InstanceDefinition == null)
         //        {
-        //            appLog.Fatal(string.Format("Loading {0} as Instance Definition failed!", file.FullName));
+        //            Debug.Log(Fatal(string.Format("Loading {0} as Instance Definition failed!", file.FullName));
         //            return;
         //        }
 
