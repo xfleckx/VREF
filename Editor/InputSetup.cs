@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEditor;
 
-namespace Assets.VREF.Editor.Setup
+namespace Assets.VREF.EditorExtensions.Setup
 {
 
     /// <summary>

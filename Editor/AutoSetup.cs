@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-using Assets.VREF.Editor.Setup;
+using Assets.VREF.EditorExtensions.Setup;
 using Assets.VREF.Scripts.TestAndDebugging;
-using System;
 
-namespace Assets.VREF.Editor
+namespace Assets.VREF.EditorExtensions
 {
     /// <summary>
     /// This class is intented to setup some pre-conditions for the VREF framework components.
