@@ -7,7 +7,7 @@ namespace Assets.VREF.Scripts {
     /// <summary>
     /// Example basic implementation of an marker stream
     /// </summary>
-    public class DebugMarkerStream : MonoBehaviour, IMarkerStream
+    public class DebugMarkerStream : Singleton<DebugMarkerStream>, IMarkerStream
     {
         private const string streamName = "DebugMarkerStream";
         private const string logWithTimeStampPattern = "Marker {0} at {1}";

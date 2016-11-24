@@ -19,5 +19,22 @@ namespace Assets.VREF.Scripts.Util
 
             return list;
         }
+
+        /// <summary>
+        /// Iterate over all Children GameObjects
+        /// </summary>
+        /// <param name="parent">The transform which children are requested</param>
+        /// <returns>yield the next children on next call</returns>
+        public static IEnumerator<GameObject> AllChildrenLazy(this Transform parent)
+        {
+            for (int i = 0; i < parent.childCount; i++)
+            {
+                yield return parent.GetChild(i).gameObject;
+            }
+
+            yield return null;
+        }
+
+
     }
 }
