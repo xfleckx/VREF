@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.BeMoBI.Scripts
+namespace Assets.VREF.Scripts.Util
 {
     public static class DataExtensions
     {

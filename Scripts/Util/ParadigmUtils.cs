@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.BeMoBI.Scripts
+namespace Assets.VREF.Scripts
 {
     public static class ParadigmUtils
     {
