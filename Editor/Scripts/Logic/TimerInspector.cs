@@ -43,7 +43,10 @@ namespace Assets.VREF.EditorExtensions.Scripts.Logic
 			float radius = 0.2f * handleSize;
 			Handles.DrawWireDisc(pos, normal, radius + 0.01f);
 			Handles.DrawSolidArc (pos, normal, Camera.current.transform.up, durationAsAngle, radius);
-			Handles.Label(pos, t.aName);
+			var textPos = pos + new Vector3(-radius, -radius, 0);
+			Handles.Label(textPos, t.aName);
+			var labelPos = pos + new Vector3(-radius, 2.2f * radius, 0);
+			Handles.Label(labelPos, "Timer");
 		}
 		 
 	}
